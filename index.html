@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pour cette femme que j’aime tant ❤️‍🔥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;color:#5b3a45;font-family:'Quicksand',sans-serif;
+  background:
+    radial-gradient(1000px 700px at 10% 5%,#fff7f9,transparent 60%),
+    radial-gradient(900px 700px at 90% 15%,#ffe3ec,transparent 65%),
+    radial-gradient(1100px 800px at 50% 100%,#ffd0df,transparent 70%),
+    #ffe9ef;
+  overflow-x:hidden;
+}
+.hearts{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.heart{position:absolute;bottom:-70px;animation:monter linear infinite;opacity:0}
+.rose{position:absolute;bottom:-70px;animation:monter linear infinite;opacity:0}
+@keyframes monter{
+  0%{transform:translateY(0) rotate(0) scale(.8);opacity:0}
+  12%{opacity:.9}
+  85%{opacity:.55}
+  100%{transform:translateY(-115vh) rotate(30deg) scale(1.15);opacity:0}
+}
+
+.accueil{
+  position:fixed;inset:0;z-index:60;display:flex;align-items:center;justify-content:center;
+  padding:1.5rem;text-align:center;
+  background:
+    radial-gradient(900px 650px at 20% 10%,#fff7f9,transparent 60%),
+    radial-gradient(800px 600px at 85% 20%,#ffe3ec,transparent 65%),
+    radial-gradient(1000px 750px at 50% 100%,#ffd0df,transparent 70%),
+    #ffe9ef;
+  transition:opacity .8s ease,visibility .8s ease,transform .8s ease;
+}
+.accueil.fermee{opacity:0;visibility:hidden;transform:scale(1.06);pointer-events:none}
+.accueil-contenu{max-width:680px}
+.sur-titre{font-size:.78rem;letter-spacing:.42em;text-transform:uppercase;color:#c96480;font-weight:700;margin-bottom:1rem}
+.accueil h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,8vw,4.6rem);line-height:1.08;color:#7c4256;margin-bottom:1rem}
+.accueil h1 span{background:linear-gradient(120deg,#d76a88,#b45a76,#e08ea6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.accueil p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.15rem,3.4vw,1.65rem);color:#7b4d5c;margin-bottom:2.2rem}
+.bouton{display:inline-block;padding:1.1rem 2.5rem;border:0;border-radius:999px;color:#fff;font-weight:700;font-family:inherit;font-size:1rem;cursor:pointer;background:linear-gradient(120deg,#d76a88,#b45a76);box-shadow:0 18px 42px rgba(201,100,128,.38);transition:transform .25s ease,box-shadow .25s ease}
+.bouton:hover{transform:translateY(-4px);box-shadow:0 24px 52px rgba(201,100,128,.48)}
+.bouton:active{transform:scale(.97)}
+
+.message-page{
+  position:relative;z-index:2;max-width:900px;margin:0 auto;
+  padding:clamp(2.5rem,8vw,6rem) clamp(1.2rem,5vw,3rem);
+  opacity:0;transform:translateY(30px);transition:opacity 1s ease .25s,transform 1s ease .25s;
+}
+.message-page.ouverte{opacity:1;transform:none}
+.bloc{
+  background:rgba(255,255,255,.78);border:1px solid rgba(255,255,255,.92);
+  border-radius:32px;padding:clamp(1.8rem,5vw,3.4rem);
+  box-shadow:0 24px 70px rgba(201,100,128,.20);backdrop-filter:blur(16px);
+  margin-bottom:clamp(2rem,6vw,3.5rem);opacity:0;transform:translateY(55px) scale(.98);
+  transition:opacity 1s ease,transform 1s cubic-bezier(.16,.84,.28,1);
+}
+.bloc.visible{opacity:1;transform:translateY(0) scale(1)}
+h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:clamp(2rem,6vw,3.2rem);color:#7c4256;margin-bottom:1.4rem}
+p{font-size:clamp(1.02rem,2.6vw,1.22rem);line-height:1.95;margin-bottom:1.15rem}
+.emphase{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.3rem,3.4vw,1.9rem);color:#a44d69}
+footer{text-align:center;padding:2rem 1rem 4rem;color:#96606f}
+
+.pensee-bouton{
+  display:block;width:100%;margin-top:1.5rem;padding:1.15rem 1.4rem;border:0;border-radius:999px;
+  color:#fff;font-family:'Quicksand',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;
+  background:linear-gradient(120deg,#d76a88,#b45a76);box-shadow:0 18px 42px rgba(201,100,128,.38);
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.pensee-bouton:hover{transform:translateY(-3px);box-shadow:0 24px 52px rgba(201,100,128,.48)}
+
+.fond-fenetre{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:1.2rem;background:rgba(74,36,48,.48);backdrop-filter:blur(8px)}
+.fond-fenetre.ouverte{display:flex;animation:fondu .3s ease}
+@keyframes fondu{from{opacity:0}to{opacity:1}}
+.fenetre{width:min(580px,100%);background:#fffafc;border:2px solid rgba(215,106,136,.35);border-radius:36px;padding:clamp(1.7rem,5vw,2.8rem);text-align:center;box-shadow:0 35px 90px rgba(123,52,72,.38);animation:apparaitre .45s cubic-bezier(.2,.9,.25,1.2)}
+@keyframes apparaitre{from{opacity:0;transform:translateY(35px) scale(.94)}to{opacity:1;transform:none}}
+.fenetre h3{font-family:'Cormorant Garamond',serif;color:#7c4256;font-size:clamp(1.8rem,6vw,2.7rem);margin-bottom:.7rem}
+.fenetre>p{color:#7b4d5c;margin-bottom:1.7rem}
+textarea{
+  width:100%;min-height:150px;padding:1rem;border:2px solid rgba(215,106,136,.28);border-radius:22px;
+  font-family:'Quicksand',sans-serif;font-size:1rem;color:#5b3a45;resize:vertical;outline:none;background:#fff
+}
+textarea:focus{border-color:#d76a88}
+.envoyer{
+  width:100%;margin-top:1.2rem;padding:1.1rem 1.2rem;border:0;border-radius:999px;color:#fff;
+  font-family:'Quicksand',sans-serif;font-weight:700;font-size:1rem;cursor:pointer;
+  background:#25D366;box-shadow:0 15px 35px rgba(37,211,102,.35);transition:transform .2s ease
+}
+.envoyer:hover{transform:translateY(-3px)}
+@media (prefers-reduced-motion:reduce){.bloc{opacity:1;transform:none}.heart,.rose{display:none}}
+</style>
+</head>
+<body>
+
+<audio id="musique" loop preload="auto">
+  <source src="musique.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts" id="animations" aria-hidden="true"></div>
+
+<section class="accueil" id="accueil">
+  <div class="accueil-contenu">
+    <div class="sur-titre">Un message pour toi</div>
+    <h1>Pour cette femme que j’aime tant<br>et dont je suis fière d’avoir dans ma vie <span>❤️‍🔥</span></h1>
+    <p>Il y a des mots que je veux te laisser ici, pour que tu saches à quel point tu comptes pour moi.</p>
+    <button class="bouton" type="button" id="lire-message">Lire le message ❤️</button>
+  </div>
+</section>
+
+<main class="message-page" id="message-page">
+  <section class="bloc" id="debut-message">
+    <h2>Mon amour,</h2>
+    <p>Je veux que tu saches à quel point je t’aime, et à quel point je crois en nous. ❤️</p>
+    <p>Mon bb, je t’aime. Pas seulement pour les moments faciles, mais aussi pour tout ce que tu es, même quand les choses sont compliquées. ❤️</p>
+    <p>Je voudrais vraiment que nous nous aimions pour de vrais, avec sincérité, patience et respect. Je veux qu’on protège cet amour, qu’on ne laisse personne le détruire, ni les mots, ni les peurs, ni les influences extérieures. 🌹</p>
+    <p>Je crois qu’on peut construire quelque chose de beau si on décide de se choisir, de se comprendre et de se soutenir. ❤️</p>
+    <p>Tu es différente, ma chérie. Tu es une guerrière, une femme forte, quelqu’un qui a du courage et de la valeur. 🌹</p>
+    <p>J’ai confiance en toi. Je crois en ta réussite, en tes capacités et en tout ce que tu peux accomplir. Je t’encourage à persévérer, à respecter tes efforts et à ne jamais douter de ta valeur. ❤️</p>
+    <p>Tu es une merveilleuse personne, une rose parmi tant d’autres. Ne laisse pas les chardons t’empêcher de briller, ni contaminer la clarté qui est en toi. 🌹</p>
+    <p>Je veux qu’on protège notre amour, pas qu’on le laisse se perdre à cause des malentendus ou des influences extérieures. ❤️</p>
+    <p>Je veux qu’on apprennne à se parler, à se comprendre et à se soutenir, même quand ce n’est pas facile. 🌹</p>
+    <p>Si tu es prête, je veux qu’on essaie de construire quelque chose de vrai, avec patience et respect. ❤️</p>
+    <p class="emphase">Micolia, je t’aime. 🌹❤️</p>
+
+    <button class="pensee-bouton" type="button" id="pensee-bouton">
+      Une pensée ? Envoie-la moi ma chérie ❤️
+    </button>
+  </section>
+</main>
+
+<footer>Fait avec tout mon amour ❤️</footer>
+
+<div class="fond-fenetre" id="fond-fenetre" role="dialog" aria-modal="true">
+  <div class="fenetre">
+    <h3>Une petite pensée pour moi ? 💌</h3>
+    <p>Écris-moi ce qui te passe par la tête, ma chérie…</p>
+    <textarea id="pensee-texte" placeholder="Écris ta pensée ici…"></textarea>
+    <button class="envoyer" type="button" id="envoyer-pensee">Envoyer sur WhatsApp ❤️</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var zone=document.getElementById('animations');
+  var symboles=['❤️','🌹','💖','🌹','❤️','🌹'];
+
+  function creerAnimation(){
+    var element=document.createElement('div');
+    var rose=Math.random()>.5;
+    element.className=rose?'rose':'heart';
+    element.textContent=rose?'🌹':symboles[Math.floor(Math.random()*symboles.length)];
+    element.style.left=(Math.random()*100)+'%';
+    element.style.fontSize=(14+Math.random()*28)+'px';
+    element.style.animationDuration=(9+Math.random()*14)+'s';
+    element.style.animationDelay=(-Math.random()*22)+'s';
+    zone.appendChild(element);
+    setTimeout(function(){element.remove()},25000);
+  }
+
+  for(var i=0;i<34;i++)creerAnimation();
+  setInterval(creerAnimation,1200);
+
+  var accueil=document.getElementById('accueil');
+  var pageMessage=document.getElementById('message-page');
+  var boutonLire=document.getElementById('lire-message');
+  var musique=document.getElementById('musique');
+
+  boutonLire.addEventListener('click',function(){
+    accueil.classList.add('fermee');
+    pageMessage.classList.add('ouverte');
+    document.body.style.overflow='auto';
+
+    musique.play().catch(function(){});
+
+    setTimeout(function(){
+      var premier=document.getElementById('debut-message');
+      if(premier){
+        premier.classList.add('visible');
+        premier.scrollIntoView({behavior:'smooth',block:'start'});
+      }
+    },450);
+  });
+
+  var blocs=document.querySelectorAll('.bloc');
+  if('IntersectionObserver' in window){
+    var observateur=new IntersectionObserver(function(entrees){
+      entrees.forEach(function(entree){
+        if(entree.isIntersecting){
+          entree.target.classList.add('visible');
+          observateur.unobserve(entree.target);
+        }
+      });
+    },{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+    blocs.forEach(function(bloc){observateur.observe(bloc)});
+  }else{
+    blocs.forEach(function(bloc){bloc.classList.add('visible')});
+  }
+
+  var fond=document.getElementById('fond-fenetre');
+  var boutonPensee=document.getElementById('pensee-bouton');
+  var texte=document.getElementById('pensee-texte');
+  var boutonEnvoyer=document.getElementById('envoyer-pensee');
+  var numeroWhatsApp='22953538609';
+
+  boutonPensee.addEventListener('click',function(){
+    fond.classList.add('ouverte');
+    document.body.style.overflow='hidden';
+    texte.value='';
+    setTimeout(function(){texte.focus()},250);
+  });
+
+  fond.addEventListener('click',function(e){
+    if(e.target===fond){
+      fond.classList.remove('ouverte');
+      document.body.style.overflow='auto';
+    }
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      fond.classList.remove('ouverte');
+      document.body.style.overflow='auto';
+    }
+  });
+
+  boutonEnvoyer.addEventListener('click',function(){
+    var message=texte.value.trim();
+
+    if(!message){
+      alert('Écris-moi au moins une petite pensée 🥺❤️');
+      return;
+    }
+
+    musique.pause();
+    musique.currentTime=0;
+
+    var messageFinal='💌 Une pensée pour toi mon amour :\n\n'+message;
+    var lien='https://wa.me/'+numeroWhatsApp+'?text='+encodeURIComponent(messageFinal);
+
+    window.open(lien,'_blank');
+    fond.classList.remove('ouverte');
+    document.body.style.overflow='auto';
+  });
+})();
+</script>
+</body>
+</html>
